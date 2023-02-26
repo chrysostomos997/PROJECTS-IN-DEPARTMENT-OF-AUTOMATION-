@@ -1,0 +1,86 @@
+start:
+PRINT "FOR THE RIGHT HAND PRESS 1..FOR THE LEFT HAND PRESS 2.."
+INPUT a
+IF a = 1 THEN
+    GOTO RIGHT
+ELSEIF a = 2 THEN
+    GOTO LEFT
+ELSE
+    GOTO start
+END IF
+
+
+RIGHT:
+PRINT "GIVE x FOR RIGHT HAND l1:"
+INPUT l1x
+PRINT "GIVE y FOR RIGHT HAND l1: "
+INPUT l1y
+l1 = SQR(ABS(l1x * l1x + l1y * l1y))
+PRINT "THE LENGTH OF THE RIGHT HAND  l1 IS: "; l1
+PRINT "PRINT "GIVE x FOR RIGHT HAND l2: "
+INPUT l2x
+PRINT "PRINT "GIVE y FOR RIGHT HAND l2:" "
+INPUT l2y
+l2 = SQR(ABS(l2x * l2x + l2y * l2y))
+PRINT "THE LENGTH OF THE RIGHT HAND  l2 IS: "; l2
+
+sidex = ABS(l2x - l1x)
+sidey = ABS(l2y - l1y)
+l3 = SQR(ABS(sidex * sidex + sidey * sidey))
+PRINT "THE LENGTH OF THE SIDE OF THE TRIANGLE IS: "; l3
+
+t = (l1 + l2 + l3) / 2
+PRINT "THE SEMIPERIMETER OF THE TRIANGLE IS: "; t
+
+e = SQR(ABS(t * (t - l1) * (t - l2) * (t - l3)))
+PRINT "THE ACREAGE OF THE TRIANGLE IS "; e
+
+h = (2 * e) / l3
+
+PRINT "THE HEIGHT IS: "; h
+OK = SQR(h * h + l1 * l1)
+PRINT "LENGTH OK ="; OK
+b = OK / l3
+xK = (b * l2x)
+yK = (b * l2y)
+PRINT " THE SPOTS OF K IS : ("; xK; ","; yK; ")"
+
+GOTO end
+
+
+LEFT:
+PRINT "GIVE x FOR LEFT HAND l1:"
+INPUT l1xa
+PRINT "GIVE y FOR LEFT HAND l1:: "
+INPUT l1ya
+l1a = SQR(ABS(l1xa * l1xa + l1ya * l1ya))
+PRINT "THE LENGTH OF THE LEFT HAND  l1 IS: "; l1
+PRINT "GIVE x FOR LEFT HAND l2: "
+INPUT l2xb
+PRINT "GIVE y FOR LEFT HAND l2: "
+INPUT l2yb
+l2a = SQR(ABS(l2xb * l2xb + l2yb * l2yb))
+PRINT "THE LENGTH OF THE LEFT HAND  l2 IS: "; l2
+
+sidex1 = ABS(l2xb - l1xa)
+sidey1 = ABS(l2yb - l1ya)
+l3a = SQR(ABS(pleurax1 * pleurax1 + pleuray1 * pleuray1))
+PRINT "THE LENGTH OF THE SIDE OF THE TRIANGLE IS: "; l3a
+
+t2 = (l1a + l2a + l3a) / 2
+PRINT "THE SEMIPERIMETER OF THE TRIANGLE IS:  "; t2
+
+e1 = SQR(ABS(t2 * (t2 - l1a) * (t2 - l2a) * (t2 - l3a)))
+PRINT "THE ACREAGE OF THE TRIANGLE IS "; e1
+
+
+h1 = (2 * e1) / l3a
+
+PRINT "THE HEIGHT IS: "; h1
+
+GOTO end
+
+end:
+PRINT "Press any key to continue.."
+
+
