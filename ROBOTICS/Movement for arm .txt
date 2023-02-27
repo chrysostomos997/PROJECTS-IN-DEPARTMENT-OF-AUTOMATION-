@@ -1,0 +1,338 @@
+PRINT "Give the maximum desired length for the arms"
+
+
+a = 0
+DO
+    INPUT l
+    IF l <= 0 THEN
+        PRINT "the variable is negative, try again "
+    ELSEIF l > 100 THEN
+        PRINT "the variable is too big , give number between 0<x<100"
+
+    END IF
+    IF a > 10 THEN
+
+        PRINT "too many wrong attemps"
+        END
+    END IF
+    a = a + 1
+LOOP WHILE ((l <= 1 OR l > 100) AND (a <= 11))
+
+PRINT "Give length of the right arm l1 and for the left arm l2: "
+
+a = 0
+DO
+    PRINT "l1"
+    INPUT l1
+    IF l1 <= 0 THEN
+        PRINT "wrong number , try again. Give number between 0<x<100"
+    ELSEIF l1 > l THEN
+        PRINT "this number is too big , give number smaller than "; l; "and positive"
+
+    END IF
+    IF a > 10 THEN
+
+        PRINT "too many wrong attemps"
+        END
+    END IF
+    a = a + 1
+LOOP WHILE ((l1 <= 1 OR l1 > l) AND (a <= 11))
+
+a = 0
+DO
+    PRINT "l2"
+    INPUT l2
+    IF l2 <= 0 THEN
+        PRINT "try again, Give positive number "
+    ELSEIF l2 > l THEN
+        PRINT "this number is too big , give number smaller than "; l; "and positive"
+
+    END IF
+    IF a > 10 THEN
+
+        PRINT "too many wrong attemps"
+        END
+    END IF
+    a = a + 1
+LOOP WHILE ((l2 <= 1 OR l2 > l) AND (a <= 11))
+
+
+
+
+'////////////////////////////////////////////////////////////////////////////////////////////////
+
+DO
+    CLS
+    a = 0
+    PRINT "Give coordinates for movement , T1 start kai T2 end"
+    b = 0
+    DO
+        DO
+
+            PRINT "xT1"
+            INPUT xT1
+            PRINT "yT1"
+            INPUT yT1
+            T1 = SQR(xT1 ^ 2 + yT1 ^ 2)
+            IF (T1 > (l1 + l2)) THEN
+
+                PRINT "wrong coordinates , try again  "
+
+            END IF
+            IF a > 10 THEN
+
+                PRINT "too many wrong attemps"
+                END
+            END IF
+            a = a + 1
+        LOOP WHILE ((T1 > (l1 + l2)) AND (a <= 11))
+
+        a = 0
+        DO
+
+            PRINT "xT2"
+            INPUT xT2
+            PRINT "yT2"
+            INPUT yT2
+            T2 = SQR(xT2 ^ 2 + yT2 ^ 2)
+            IF (T2 > (l1 + l2)) THEN
+
+                PRINT "wrong coordinates , try again"
+
+            END IF
+            IF a > 10 THEN
+
+                PRINT "too many wrong attemps"
+                END
+            END IF
+            a = a + 1
+        LOOP WHILE ((T2 > (l1 + l2)) AND (a <= 11))
+        'E=1/2*Bash*u   E=sqr(t(t-T)(t-T1)(t-T2))        t=(T+T1+T2)/2
+
+        xT = xT2 - xT1
+        yT = yT2 - yT1
+        T = SQR(xT ^ 2 + yT ^ 2)
+        tir = ((T1 + T2 + T) / 2)
+        E = SQR(tir * (tir - T1) * (tir - T2) * (tir - T))
+        u = ((2 * E) / T)
+        ess = ((xT1 * xT2) + (yT1 * yT2))
+
+
+        IF (ABS(l1 - l2) < u) THEN
+            PRINT "The coordinates are ok "
+            ess = 5
+        ELSE
+            IF (ess > 0) THEN
+                PRINT "The coordinates are ok "
+            ELSE
+                PRINT "The coordinates are not ok "
+                PRINT "Try again "
+            END IF
+
+        END IF
+
+
+        IF b > 10 THEN
+
+            PRINT "too many wrong attemps"
+            END
+        END IF
+
+    LOOP WHILE (ess < 0) AND (b <= 11)
+
+
+    T = SQR(xT ^ 2 + yT ^ 2)
+    T1 = SQR(xT1 ^ 2 + yT1 ^ 2)
+    T2 = SQR(xT2 ^ 2 + yT2 ^ 2)
+
+
+
+
+    DO
+        PRINT "for movement speed press 1 for time press 0"
+        INPUT epil
+    LOOP WHILE ((epil2 <> 1) AND (epil2 <> 0))
+
+
+    IF epil2 = 1 THEN
+        PRINT "movement speed (m/s)"
+        INPUT tax
+        det = (T / tax) * 20
+
+    ELSE IF epil2 = 0 THEN
+            PRINT "time (sec)"
+            INPUT time
+            det = time * 20
+
+
+        END IF
+    END IF
+    xR = xT1
+    yR = yT1
+
+
+    CLS
+    FOR n = 0 TO (det - 1)
+
+        IF n >= 1 THEN
+            LINE (320, 240)-(320 + xxA, 240 - yyA), 0
+            LINE -(320 + xxnT, 240 - yynT), 0
+            CIRCLE (320, 240), l1 + l2
+            CIRCLE (320, 240), ABS(l2 - l1)
+
+        END IF
+
+        T1 = SQR(xT1 ^ 2 + yT1 ^ 2)
+        tir = ((l1 + l2 + T1) / 2)
+        E = SQR(tir * (tir - T1) * (tir - l1) * (tir - l2))
+
+
+        KA = ((2 * E) / T1)
+
+        OK = SQR(l1 ^ 2 - KA ^ 2)
+        Kx = (OK / T1) * xT1
+        Ky = (OK / T1) * yT1
+
+
+        mon = SQR(Kx ^ 2 + Ky ^ 2)
+        yAK = KA * Ky
+        xAK = KA * Kx
+
+
+        xA = yAK / mon
+        yA = -1 * (xAK / mon)
+
+        xA2 = -1 * (yAK / mon)
+        yA2 = xAK / mon
+
+        xKAd = -1 * (xA - Kx)
+        yKAd = -1 * (yA - Ky)
+        xKA2d = -1 * (xA2 - Kx)
+        yKA2d = -1 * (yA2 - Ky)
+        ess = -1 * ((xT1 * xKAd) + (yT1 * yKAd))
+        IF n = 0 THEN
+            IF ess > 0 THEN
+                PRINT "The coordinates for the clockwise rotation are x="; xKAd; "and y="; yKAd
+                PRINT  "The coordinates for the counterclowise rotataion are  x="; xKA2d; "and  y="; yKA2d
+            ELSE
+                PRINT "The coordinates for the clockwise rotation are  x="; xKA2d; "and y="; yKA2d
+                PRINT "The coordinates for the counterclockwise rotataion are x="; xKAd; "and y="; yKAd
+
+                DO
+                    PRINT "if you want to continue with the clockwise rotation press 1 or if you want the counterclockwise press 0"
+                    INPUT epil
+                    CLS
+                LOOP WHILE ((epil <> 1) AND (epil <> 0))
+
+
+
+
+
+                SCREEN 12
+                CIRCLE (320, 240), l1 + l2
+                CIRCLE (320, 240), ABS(l2 - l1)
+                LINE (320 + xT1, 240 - yT1)-(320 + xT2, 240 - yT2), 9, , 63
+
+
+
+
+            END IF
+        END IF
+
+        IF epil = 1 AND ess > 0 THEN
+            xxA = xKAd
+            yyA = yKAd
+        ELSE IF epil = 1 AND ess < 0 THEN
+                xxA = xKA2d
+                yyA = yKA2d
+            END IF
+        END IF
+
+
+
+
+
+
+        IF epil = 0 AND ess > 0 THEN
+            xxA = xKA2d
+            yyA = yKA2d
+        ELSE IF epil = 0 AND ess < 0 THEN
+                xxA = xKAd
+                yyA = yKAd
+            END IF
+
+        END IF
+
+
+        SCREEN 12
+
+
+        IF n = 0 THEN
+            xTT = xT2 - xT1
+            yTT = yT2 - yT1
+
+            zT = SQR(xTT ^ 2 + yTT ^ 2)
+            sT = zT / (det - 1)
+        END IF
+
+
+
+
+        xnT = xTT * (sT / zT) * n
+        ynT = yTT * (sT / zT) * n
+        xxnT = xR + xnT
+        yynT = yR + ynT
+        IF n >= 1 THEN
+            LINE (320, 240)-(320 + xxA, 240 - yyA), 2
+            LINE -(320 + xxnT, 240 - yynT), 5
+        END IF
+
+        _DELAY (0.05)
+
+
+
+        'q1
+        q1 = GWNIA(yyA, xxA)
+        'q2
+        xq2 = xT1 - xxA
+        yq2 = yT1 - yyA
+        q2 = GWNIA(yq2, xq2)
+
+
+
+        xT1 = xxnT
+        yT1 = yynT
+
+
+    NEXT n
+    PRINT "For new move press 0 . For end press anything else"
+    INPUT epil2
+
+
+LOOP WHILE (epil2 = 0)
+
+
+
+'/////////////////////////////////////////////////////////////////////////////////
+FUNCTION angle (y, x)
+    IF ((x > 0) AND (y > 0)) OR ((x > 0) AND (y < 0)) THEN
+        IF y > x THEN
+            angle = pi / 4 - (TAN(x / y) ^ -1)
+        ELSE
+            angle = (TAN(y / x) ^ -1)
+
+        END IF
+    ELSE
+        angle = (TAN(y / x) ^ -1) + pi
+
+
+
+    END IF
+
+
+END FUNCTION
+
+
+
+
+
