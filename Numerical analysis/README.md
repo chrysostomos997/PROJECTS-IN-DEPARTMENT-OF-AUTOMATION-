@@ -1,3 +1,4 @@
 
-<![Image description](Numerical analysis/Screenshot_1.png) />
 
+
+![Example Image](Numerical analysis/Screenshot_1.png)
