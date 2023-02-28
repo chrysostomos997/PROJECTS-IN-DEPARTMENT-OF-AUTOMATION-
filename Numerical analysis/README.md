@@ -1,3 +1,3 @@
 
-<"![Image description](Numerical analysis/numerical_analysis.jpg)" />
+<![Image description](Numerical analysis/numerical_analysis.jpg) />
 
