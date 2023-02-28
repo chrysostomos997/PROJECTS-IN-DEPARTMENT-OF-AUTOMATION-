@@ -1,4 +1,4 @@
-# CNC Programming
+# CNC (Computer Numerical Control)
 
 
 CNC (Computer Numerical Control) programming is the process of creating code that controls the operation of a CNC machine. CNC machines are widely used in manufacturing industries for precision machining of various materials such as metal, wood, plastics, and composites. CNC programming enables a CNC machine to carry out a series of operations with high accuracy and repeatability, which can lead to increased productivity and reduced costs.
