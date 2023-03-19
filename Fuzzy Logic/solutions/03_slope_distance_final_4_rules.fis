@@ -1,5 +1,5 @@
 [System]
-Name='03_klisi_apostasi_final_4_rules'
+Name='03_slope_distance_final_4_rules'
 Type='mamdani'
 Version=2.0
 NumInputs=2
@@ -12,30 +12,30 @@ AggMethod='max'
 DefuzzMethod='centroid'
 
 [Input1]
-Name='klisi'
+Name='slope'
 Range=[0 40]
 NumMFs=4
-MF1='mikro':'trimf',[0 0 10]
-MF2='mesaio':'trimf',[5 15 25]
-MF3='megalo':'trimf',[25 40 40]
+MF1='small':'trimf',[0 0 10]
+MF2='medium':'trimf',[5 15 25]
+MF3='big':'trimf',[25 40 40]
 MF4='mf4':'trimf',[20 25 35]
 
 [Input2]
-Name='apostasi'
+Name='distance'
 Range=[0 20]
 NumMFs=3
-MF1='mikro':'trimf',[0 0 15]
-MF2='mesaio':'trimf',[12 15 20]
-MF3='megalo':'trimf',[15 20 20]
+MF1='small':'trimf',[0 0 15]
+MF2='medium':'trimf',[12 15 20]
+MF3='big':'trimf',[15 20 20]
 
 [Output1]
-Name='dunami'
+Name='force'
 Range=[0 20]
 NumMFs=4
-MF1='mikro':'trimf',[0 5 10]
+MF1='small':'trimf',[0 5 10]
 MF2='mf2':'trimf',[2 11 20]
 MF3='mf3':'trimf',[18 19 20]
-MF4='mesmikr':'trimf',[0 8 16]
+MF4='medsmall':'trimf',[0 8 16]
 
 [Rules]
 1 2, 1 (1) : 1
