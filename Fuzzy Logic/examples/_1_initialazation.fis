@@ -1,5 +1,5 @@
 [System]
-Name='proodos1_initialazation'
+Name='1_initialazation'
 Type='mamdani'
 Version=2.0
 NumInputs=2
