@@ -1,5 +1,5 @@
 [System]
-Name='proodos1_arxikopoihsh'
+Name='proodos1_initialazation'
 Type='mamdani'
 Version=2.0
 NumInputs=2
@@ -12,15 +12,15 @@ AggMethod='max'
 DefuzzMethod='centroid'
 
 [Input1]
-Name='thermokrasia'
+Name='Temperature'
 Range=[5 50]
 NumMFs=3
-MF1='mikro':'trimf',[5 5 21]
-MF2='mesaio':'trimf',[15 21 32]
-MF3='megalo':'trimf',[21 50 50]
+MF1='small':'trimf',[5 5 21]
+MF2='medium':'trimf',[15 21 32]
+MF3='big':'trimf',[21 50 50]
 
 [Input2]
-Name='Ygrasia'
+Name='Humidity'
 Range=[20 100]
 NumMFs=3
 MF1='mf1':'trimf',[20 20 50]
@@ -28,7 +28,7 @@ MF2='mf2':'trimf',[40 50 70]
 MF3='mf3':'trimf',[50 100 100]
 
 [Output1]
-Name='strofes'
+Name='rpm'
 Range=[250 1250]
 NumMFs=3
 MF1='mf1':'trimf',[250 350 450]
