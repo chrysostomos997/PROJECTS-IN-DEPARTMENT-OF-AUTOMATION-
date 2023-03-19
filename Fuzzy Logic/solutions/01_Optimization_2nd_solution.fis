@@ -1,5 +1,5 @@
 [System]
-Name='Kostas_Kamoutsis_Optimization_best'
+Name='_Optimization_best'
 Type='mamdani'
 Version=2.0
 NumInputs=2
@@ -12,28 +12,28 @@ AggMethod='max'
 DefuzzMethod='centroid'
 
 [Input1]
-Name='thermokrasia'
+Name='temperature'
 Range=[5 50]
 NumMFs=3
-MF1='mikri':'trapmf',[5 5 11.5 15.1]
-MF2='mesaia':'trimf',[12 21 35]
-MF3='megali':'trapmf',[31.9 37.5 50 50]
+MF1='small':'trapmf',[5 5 11.5 15.1]
+MF2='medium':'trimf',[12 21 35]
+MF3='big':'trapmf',[31.9 37.5 50 50]
 
 [Input2]
-Name='Ygrasia'
+Name='Humidity'
 Range=[20 100]
 NumMFs=3
-MF1='mikri':'trapmf',[20 20 30 50]
-MF2='mesaia':'trimf',[40 50 70]
-MF3='megali':'trapmf',[50 90 100 100]
+MF1='small':'trapmf',[20 20 30 50]
+MF2='medium':'trimf',[40 50 70]
+MF3='big':'trapmf',[50 90 100 100]
 
 [Output1]
-Name='strofes'
+Name='rpm '
 Range=[250 1250]
 NumMFs=3
-MF1='liges':'trimf',[250 250 450]
-MF2='mesaies':'trimf',[250 600 950]
-MF3='polles':'trimf',[750 750 1250]
+MF1='few':'trimf',[250 250 450]
+MF2='medium':'trimf',[250 600 950]
+MF3='many':'trimf',[750 750 1250]
 
 [Rules]
 1 1, 1 (1) : 1
