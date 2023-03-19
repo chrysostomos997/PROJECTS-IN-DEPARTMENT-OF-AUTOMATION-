@@ -1,0 +1,41 @@
+[System]
+Name='proodos1_arxikopoihsh'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='thermokrasia'
+Range=[5 50]
+NumMFs=3
+MF1='mikro':'trimf',[5 5 21]
+MF2='mesaio':'trimf',[15 21 32]
+MF3='megalo':'trimf',[21 50 50]
+
+[Input2]
+Name='Ygrasia'
+Range=[20 100]
+NumMFs=3
+MF1='mf1':'trimf',[20 20 50]
+MF2='mf2':'trimf',[40 50 70]
+MF3='mf3':'trimf',[50 100 100]
+
+[Output1]
+Name='strofes'
+Range=[250 1250]
+NumMFs=3
+MF1='mf1':'trimf',[250 350 450]
+MF2='mf2':'trimf',[250 600 950]
+MF3='mf3':'trimf',[650 950 1250]
+
+[Rules]
+1 1, 1 (1) : 1
+2 2, 2 (1) : 1
+3 3, 3 (1) : 1

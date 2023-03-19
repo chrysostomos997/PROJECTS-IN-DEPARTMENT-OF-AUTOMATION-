@@ -1,0 +1,41 @@
+[System]
+Name='04_'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[20 30]
+NumMFs=3
+MF1='mf1':'trimf',[20 20 26]
+MF2='mf2':'trimf',[25 26 28]
+MF3='mf3':'trimf',[26 30 30]
+
+[Input2]
+Name='input2'
+Range=[3500 5000]
+NumMFs=3
+MF1='mf1':'trimf',[3500 3500 4200]
+MF2='mf2':'trimf',[3900 4200 4500]
+MF3='mf3':'trimf',[4200 5000 5000]
+
+[Output1]
+Name='output1'
+Range=[800 1200]
+NumMFs=3
+MF1='mf1':'trimf',[800 870 940]
+MF2='mf2':'trimf',[800 950 1100]
+MF3='mf3':'trimf',[1033.4 1116.7 1200]
+
+[Rules]
+1 3, 1 (1) : 1
+3 1, 3 (1) : 1
+2 2, 2 (1) : 1
